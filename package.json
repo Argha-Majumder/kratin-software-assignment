@@ -1,0 +1,18 @@
+{
+  "name": "kratin-software-assignment",
+  "version": "1.0.0",
+  "description": "Software solutions to assist people with 65+ years",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "Argha",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-ejs-layouts": "^2.5.1",
+    "nodemon": "^3.0.1"
+  }
+}
