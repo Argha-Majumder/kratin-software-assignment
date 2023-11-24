@@ -1,0 +1,7 @@
+#carousel-container .carousel .carousel-item {
+  height: 500px; }
+  #carousel-container .carousel .carousel-item img {
+    object-fit: cover;
+    min-height: 300px; }
+  #carousel-container .carousel .carousel-item .carousel-caption h5, #carousel-container .carousel .carousel-item .carousel-caption p {
+    color: black; }
