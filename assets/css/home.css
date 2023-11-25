@@ -1,7 +1,11 @@
-#carousel-container .carousel .carousel-item {
-  height: 500px; }
-  #carousel-container .carousel .carousel-item img {
-    object-fit: cover;
-    min-height: 300px; }
-  #carousel-container .carousel .carousel-item .carousel-caption h5, #carousel-container .carousel .carousel-item .carousel-caption p {
-    color: black; }
+#carousel-container .carousel {
+  margin: 2rem 4rem; }
+  #carousel-container .carousel .carousel-item {
+    height: 400px; }
+    #carousel-container .carousel .carousel-item img {
+      background-size: cover; }
+    #carousel-container .carousel .carousel-item .carousel-caption h5, #carousel-container .carousel .carousel-item .carousel-caption p {
+      color: black; }
+
+.med-title:hover {
+  text-decoration: underline; }

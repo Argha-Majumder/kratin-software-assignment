@@ -1,0 +1,24 @@
+<h2 style="text-align: center;">A list of your medicines</h2>
+<form action="/users/medicines/create" method="POST" class="mt-5">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-auto">
+          <input type="text" class="form-control" name="medicine-name" placeholder="Add medicine name" required>
+        </div>
+        <div class="col-auto">
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date">
+        </div>
+        <div class="col-auto">
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time">
+        </div>
+        <div class="col-auto">
+            <input class="btn btn-primary" type="submit" value="Add Timer">
+        </div>
+    </div>
+</form>
+<% if (medicineLists.length != 0) { %>
+    <% for (let medicine of medicineLists) { %>
+        <%= medicine.name %>
+    <% } %>
+<% } %>

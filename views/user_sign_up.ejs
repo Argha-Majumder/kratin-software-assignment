@@ -1,34 +1,35 @@
-<ul class="nav nav-underline">
-    <li class="nav-item">
-        <a class="nav-link" href="/users/sign-in">Sign In</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="/users/sign-up">Register</a>
-    </li>
-</ul>
+<div class="d-flex justify-content-center mb-4">
+    <ul class="nav nav-underline">
+        <li class="nav-item">
+            <a class="nav-link" href="/users/sign-in">Sign In</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/users/sign-up">Register</a>
+        </li>
+    </ul>
+</div>
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <img src="https://accounts.practo.com/static/images/illustration.png" class="img-fluid" alt="Sign Up Image">
+            <img src="https://accounts.practo.com/static/images/illustration.png" class="img-fluid d-none d-md-block" alt="Sign Up Image">
         </div>
         <div class="col-md-6">
-            <h2>Sign Up</h2>
-            <form>
-               <div class="form-group">
+            <form action="/users/create" method="POST">
+               <div class="form-group mb-3">
                    <label for="fullName">Full Name</label>
-                   <input type="text" class="form-control" id="fullName" placeholder="Enter your full name">
+                   <input type="text" class="form-control" id="fullName" name="name" placeholder="Enter your full name" required>
                </div>
-               <div class="form-group">
+               <div class="form-group mb-3">
                    <label for="email">Email address</label>
-                   <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                   <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
                </div>
-               <div class="form-group">
+               <div class="form-group mb-3">
                    <label for="password">Password</label>
-                   <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                   <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
                </div>
-               <div class="form-group">
+               <div class="form-group mb-3">
                    <label for="confirmPassword">Confirm Password</label>
-                   <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm your password">
+                   <input type="password" class="form-control" id="confirmPassword" name="confirm_password" placeholder="Confirm your password" required>
                </div>
                <button type="submit" class="btn btn-primary">Sign Up</button>
             </form>
