@@ -2,15 +2,15 @@
 <form action="/users/medicines/create" method="POST" class="mt-5">
     <div class="row justify-content-center align-items-center">
         <div class="col-auto">
-          <input type="text" class="form-control" name="medicine-name" placeholder="Add medicine name" required>
+          <input type="text" class="form-control" name="medicine_name" placeholder="Add medicine name" required>
         </div>
         <div class="col-auto">
             <label for="date">Date:</label>
-            <input type="date" id="date" name="date">
+            <input type="date" id="date" name="date" required>
         </div>
         <div class="col-auto">
             <label for="time">Time:</label>
-            <input type="time" id="time" name="time">
+            <input type="time" id="time" name="time" required>
         </div>
         <div class="col-auto">
             <input class="btn btn-primary" type="submit" value="Add Timer">
@@ -18,7 +18,28 @@
     </div>
 </form>
 <% if (medicineLists.length != 0) { %>
-    <% for (let medicine of medicineLists) { %>
-        <%= medicine.name %>
-    <% } %>
+    <table class="table mx-5">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Medicine Name</th>
+            <th scope="col">Date</th>
+            <th scope="col">Time</th>
+          </tr>
+        </thead>
+        <tbody>    
+            <% let i = 1; %>
+            <% for (let medicine of medicineLists) { %>
+            <tr>
+                <th scope="row"><%= i %></th>
+                <td><%= medicine.title %></td>
+                <% for (let date of medicine.dates) { %>
+                    <td><%= date.date %></td>
+                    <td><%= date.time %></td>
+                <% } %>
+            </tr>
+            <% i++; %>
+            <% } %>
+        </tbody>
+    </table>
 <% } %>
