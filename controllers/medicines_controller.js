@@ -57,6 +57,30 @@ module.exports.create = async (req, res) => {
     }
 }
 
+module.exports.delete = async (req, res) => {
+    try {
+        const title = req.query.title;
+        const date = req.query.date;
+        const time = req.query.time;
+        let medicine = await Medicine.findOne({title: title});
+        let dateList = medicine.dates;
+        if (dateList.length != 1) {
+            let index = dateList.findIndex(item => item.date==date && item.time==time);
+            if (index != -1) {
+                dateList.splice(index,1);
+            }
+            medicine.dates = dateList;
+            await medicine.save();
+        } else {
+            await Medicine.deleteOne(medicine._id);
+        }
+        return res.redirect('back');
+    } catch (err) {
+        console.log('Error in deleting data',err);
+        return;
+    }
+}
+
 function getToday() {
     let date = new Date();
     return date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDate();

@@ -27,6 +27,8 @@
       </div>
     </div>
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"></script>
+  <script src="/js/chat_engine.js"></script>
 <% } else { %>
   <div id="carousel-container">
       <div id="carouselExampleCaptions" class="carousel slide">
@@ -67,5 +69,32 @@
             <span class="visually-hidden">Next</span>
           </button>
       </div>
+  </div>
+  <h3 style="text-align: center;">Services We Offer</h3>
+  <div class="container mt-5">
+    <div class="row gap-5 justify-content-center">
+      <!-- Content here -->
+      <div class="card" style="width: 18rem;">
+        <img src="https://www.practostatic.com/consumer-home/desktop/images/1597423628/dweb_instant_video_consulation.png" class="card-img-top" alt="..." style="height: 50vh;">
+        <div class="card-body">
+          <h5 class="card-title">Instant Video Consultation</h5>
+          <p class="card-text">Connect within 60 secs</p>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="https://cdn-icons-png.flaticon.com/512/5246/5246295.png" class="card-img-top" alt="..." style="height: 50vh;">
+        <div class="card-body">
+          <h5 class="card-title med-title" style="text-decoration: none;">Medicine Reminder</h5>
+          <p class="card-text">Place reminder for all of your medicines</p>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="https://www.practostatic.com/consumer-home/desktop/images/1597423628/dweb_lab_tests.png" class="card-img-top" alt="..." style="height: 50vh;">
+        <div class="card-body">
+          <h5 class="card-title">Lab Tests</h5>
+          <p class="card-text">Sample pickup at your home</p>
+        </div>
+      </div>
+    </div>
   </div>
 <% } %>

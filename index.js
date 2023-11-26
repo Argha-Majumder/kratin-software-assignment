@@ -12,6 +12,15 @@ const MongoStore = require('connect-mongo');
 
 const expressLayouts = require('express-ejs-layouts');
 
+const cors = require('cors');
+const server = require('http').createServer(app);
+const chatSockets = require('./config/chat_sockets').chatSockets(server);
+server.listen(5000);
+const corsOptions = {
+    origin: 'http://localhost:8000'
+}
+app.use(cors(corsOptions));
+
 const saasMiddleware = require('node-sass-middleware');
 app.use(saasMiddleware({
     src: './assets/scss',

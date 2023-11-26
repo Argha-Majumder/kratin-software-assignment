@@ -1,5 +1,6 @@
+<link rel="stylesheet" href="/css/medicine_view.css">
 <h2 style="text-align: center;">A list of your medicines</h2>
-<form action="/users/medicines/create" method="POST" class="mt-5">
+<form action="/users/medicines/create" method="POST" class="mt-5 mx-5">
     <div class="row justify-content-center align-items-center">
         <div class="col-auto">
           <input type="text" class="form-control" name="medicine_name" placeholder="Add medicine name" required>
@@ -18,27 +19,32 @@
     </div>
 </form>
 <% if (medicineLists.length != 0) { %>
-    <table class="table mx-5">
+    <table style="width: 95%; margin-left: 3vw;" class="table table-hover mt-5 table-bordered table-primary">
         <thead>
           <tr>
             <th scope="col">#</th>
             <th scope="col">Medicine Name</th>
             <th scope="col">Date</th>
             <th scope="col">Time</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
           </tr>
         </thead>
         <tbody>    
             <% let i = 1; %>
-            <% for (let medicine of medicineLists) { %>
-            <tr>
-                <th scope="row"><%= i %></th>
-                <td><%= medicine.title %></td>
+            <% for (let medicine of medicineLists) { %>                
                 <% for (let date of medicine.dates) { %>
-                    <td><%= date.date %></td>
+                <tr>
+                    <td><%= i %></td>
+                    <td><%= medicine.title %></td>
+                    <% let revDate = date.date.split("-").reverse().join("-") %>
+                    <td><%= revDate %></td>
                     <td><%= date.time %></td>
+                    <td><a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
+                    <td><a href="/users/medicines/delete/?title=<%=medicine.title%>&date=<%=date.date%>&time=<%=date.time%>"><i class="fa-regular fa-trash-can " style="color: #f00;"></i></a></td>
+                </tr>            
+                    <% i++; %>
                 <% } %>
-            </tr>
-            <% i++; %>
             <% } %>
         </tbody>
     </table>
